@@ -1,0 +1,11 @@
+.Php.jpg
+.jpg.PhP
+.pjpeg
+.phtml
+.PhP.TxT
+.php.ndsxf
+.php.xxxjpg
+.php5
+.php.j
+.php;.jpg
+.php%00.jpg
