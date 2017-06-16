@@ -9,3 +9,4 @@
 .php.j
 .php;.jpg
 .php%00.jpg
+.php.phpgif
